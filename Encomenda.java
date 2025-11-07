@@ -1,27 +1,33 @@
 public class Encomenda {
+    // ATRIBUTOS
 
-    private String endereco;
-    private String destinatario;
-    private String status;
     private int codigo;
+    private String destinatario;
+    private String endereco;
+    private String status;
 
-    public Encomenda(String endereco, String destinatario, String status, int codigo) {
-        this.endereco = endereco;
-        this.destinatario = destinatario;
-        this.status = status;
+    // CONSTRUTOR
+    public Encomenda(int codigo, String destinatario, String endereco, String status) {
         this.codigo = codigo;
+        this.destinatario = destinatario;
+        this.endereco = endereco;
+        this.status = status;
     }
 
+    // MÉTODOS
+    public void exibirInf() {
+        System.out.println("codigo: " + codigo + "/n destinatario:" + destinatario + "/n endereco:" + endereco
+                + "/n status:" + status);
+
+    }
+
+    // estrutura do set
     public void atualizarStatus(String novoStatus) {
         this.status = novoStatus;
-    }
-
-    public void exibirInfo() {
-        System.out.println("\nDestinatario: " + destinatario + "\nEndereço: " + endereco + "\nCodigo: " + codigo
-                + "\nStatus: " + status);
     }
 
     public int getCodigo() {
         return codigo;
     }
+
 }
