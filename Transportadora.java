@@ -1,36 +1,28 @@
 public class Transportadora {
-
+    // ATRIBUTOS
     private Encomenda[] encomendas = new Encomenda[10];
     private int quantidade = 0;
 
+    // MÉTODOS
     public void adicionarEncomenda(Encomenda encomenda) {
-        if (quantidade < 10) {
-            encomendas[quantidade] = encomenda;
-            quantidade++;
-        } else {
-            System.out.println("Turma cheia!");
-        }
+        this.encomendas[quantidade] = encomenda;
+        this.quantidade++;
     }
 
-    public void listarEncomendas() {
+    public void listarEncomeda() {
         for (Encomenda encomenda : encomendas) {
-            encomenda.exibirInfo();
+            encomenda.exibirInf();
         }
     }
 
     public Encomenda buscarPorCodigo(int codigo) {
-        Encomenda pessoa = null;
-        for (Encomenda encomenda : encomendas) {
-            if (encomenda.getCodigo() == codigo) {
-                pessoa = encomenda;
+        Encomenda fev = null;
+        for (Encomenda fiv : encomendas) {
+            if (fiv.getCodigo() == codigo) {
+                fev = fiv;
             }
         }
-        return (pessoa != null) ? pessoa : null;
+        return fev;
     }
 
-    public void atualizarStatus(String novoStatus) {
-        for (Encomenda encomenda : encomendas) {
-            encomenda.atualizarStatus(novoStatus);
-        }
-    }
 }
